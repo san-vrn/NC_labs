@@ -1,6 +1,6 @@
 package com.application.contracts;
 
-import com.application.entity.Person;
+import com.application.entity.person.Person;
 import java.time.LocalDate;
 
 /**
@@ -14,8 +14,7 @@ public abstract class Contracts {
     private int numberContract;
     private Person contractOwner;
 
-    public int getID() {
-        return ID;
+    public int getID() { return ID;
     }
 
     public LocalDate getContractStartDate() {
@@ -62,4 +61,15 @@ public abstract class Contracts {
         this.contractOwner = contractOwner;
     }
 
+    /*
+    @Override
+    public String toString() {
+        return "Contracts{" +
+                "ID=" + ID +
+                ", contractStartDate=" + contractStartDate +
+                ", contractEndDate=" + contractEndDate +
+                ", numberContract=" + numberContract +
+                ", contractOwner=" + contractOwner +
+                '}';
+    }*/
 }

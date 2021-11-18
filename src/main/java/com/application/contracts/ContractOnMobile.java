@@ -1,6 +1,6 @@
 package com.application.contracts;
 
-import com.application.entity.Person;
+import com.application.entity.person.Person;
 
 import java.time.LocalDate;
 

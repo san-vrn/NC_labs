@@ -1,11 +1,10 @@
 package com.application.entity;
 
-import com.application.entity.personCharacteristics.Gender;
+import com.application.entity.person.Person;
+import com.application.entity.person.personCharacteristics.Gender;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PersonTest {
     @Test

@@ -1,7 +1,7 @@
-package com.application.entity;
+package com.application.entity.person;
 
-import com.application.entity.personCharacteristics.Gender;
 
+import com.application.entity.person.personCharacteristics.Gender;
 
 import java.time.LocalDate;
 
