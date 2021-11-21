@@ -61,7 +61,11 @@ public abstract class Contracts {
         this.contractOwner = contractOwner;
     }
 
-    /*
+    public Contracts() {
+
+    }
+
+
     @Override
     public String toString() {
         return "Contracts{" +
@@ -71,5 +75,5 @@ public abstract class Contracts {
                 ", numberContract=" + numberContract +
                 ", contractOwner=" + contractOwner +
                 '}';
-    }*/
+    }
 }

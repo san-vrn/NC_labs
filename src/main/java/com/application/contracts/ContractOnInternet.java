@@ -14,4 +14,16 @@ public class ContractOnInternet extends Contracts {
         super(ID, contractStartDate, contractEndDate, numberContract, contractOwner);
         this.internetConnectionSpeed = internetConnectionSpeed;
     }
+
+    @Override
+    public String toString() {
+        return "ContractOnInternet{" +
+                "ID=" + getID() +
+                ", contractStartDate=" + getContractEndDate() +
+                ", contractEndDate=" + getContractEndDate() +
+                ", numberContract=" + getNumberContract() +
+                ", contractOwner=" + getContractOwner() +
+                ", internetConnectionSpeed=" + internetConnectionSpeed +
+                '}';
+    }
 }

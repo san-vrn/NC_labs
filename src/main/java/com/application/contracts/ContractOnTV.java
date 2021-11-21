@@ -15,5 +15,19 @@ public class ContractOnTV extends Contracts {
         this.TV_plans = TV_plans;
     }
 
+    public ContractOnTV() {
+        super();
+    }
 
+    @Override
+    public String toString() {
+        return "ContractOnTV{" +
+                "ID=" + getID() +
+                ", contractStartDate=" + getContractEndDate() +
+                ", contractEndDate=" + getContractEndDate() +
+                ", numberContract=" + getNumberContract() +
+                ", contractOwner=" + getContractOwner() +
+                ", TV_plans=" + TV_plans +
+                '}';
+    }
 }

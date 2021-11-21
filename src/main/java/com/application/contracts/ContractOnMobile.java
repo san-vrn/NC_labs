@@ -18,4 +18,18 @@ public class ContractOnMobile extends Contracts {
         this.sms = sms;
         this.dataUsage = dataUsage;
     }
+
+    @Override
+    public String toString() {
+        return "ContractOnMobile{" +
+                "ID=" + getID() +
+                ", contractStartDate=" + getContractEndDate() +
+                ", contractEndDate=" + getContractEndDate() +
+                ", numberContract=" + getNumberContract() +
+                ", contractOwner=" + getContractOwner() +
+                ", minutes=" + minutes +
+                ", sms=" + sms +
+                ", dataUsage=" + dataUsage +
+                '}';
+    }
 }
