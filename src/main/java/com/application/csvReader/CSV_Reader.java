@@ -4,6 +4,7 @@ import com.application.contracts.ContractOnInternet;
 import com.application.contracts.ContractOnMobile;
 import com.application.contracts.ContractOnTV;
 import com.application.contracts.Contracts;
+import com.application.contracts.utils.validator.Validator;
 import com.application.entity.person.Person;
 import com.application.entity.person.personCharacteristics.Gender;
 import com.application.repository.Repository;
@@ -17,6 +18,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class CSV_Reader {
+    Validator validator = new Validator();
 
     public Repository read(Repository repo, String fileName) throws IOException {
         // открываем файл
@@ -93,6 +95,7 @@ public class CSV_Reader {
                     contract = new ContractOnInternet(id, startDate, endDate, numberContract, contractOwner, (int) Objects.requireNonNull(otherInformation)[0]);
                     break;
             }
+            validator.check(contract);
             repo.add(contract);
             index = 0;
         }
