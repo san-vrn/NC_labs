@@ -21,15 +21,11 @@ public class ContractOnMobile extends Contracts {
 
     @Override
     public String toString() {
-        return "ContractOnMobile{" +
-                "ID=" + getID() +
-                ", contractStartDate=" + getContractEndDate() +
-                ", contractEndDate=" + getContractEndDate() +
-                ", numberContract=" + getNumberContract() +
-                ", contractOwner=" + getContractOwner() +
-                ", minutes=" + minutes +
+        return  super.toString() +
+                "ContractOnMobile{" +
+                "minutes=" + minutes +
                 ", sms=" + sms +
                 ", dataUsage=" + dataUsage +
-                '}';
+                "} ";
     }
 }

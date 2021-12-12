@@ -1,4 +1,4 @@
-package com.application.contracts.utils.validator.checkers;
+package com.application.contracts.utils.validator.checkers.contractCheckers;
 
 import com.application.contracts.Contracts;
 import com.application.entity.person.Person;

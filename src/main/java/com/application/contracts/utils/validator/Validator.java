@@ -1,16 +1,19 @@
 package com.application.contracts.utils.validator;
 
-import com.application.contracts.ContractOnInternet;
 import com.application.contracts.Contracts;
-import com.application.contracts.utils.validator.checkers.ContractCheck;
-import com.application.contracts.utils.validator.checkers.PersonCheck;
+import com.application.contracts.utils.validator.checkers.contractCheckers.ContractCheck;
+import com.application.contracts.utils.validator.checkers.personCheckers.PersonCheck;
+import com.application.d_injector.Autoinjectable;
+import com.application.d_injector.Injector;
 
 public class Validator {
+        @Autoinjectable
+        ContractCheck contract_check;
+        @Autoinjectable
+        PersonCheck person_check;
 
     public ValidatorReport check(Contracts contract){
             ValidatorReport report = new ValidatorReport();
-            ContractCheck contract_check = new ContractCheck();
-            PersonCheck person_check = new PersonCheck();
             report.setStatus("ok");
 
             if(!(contract_check.checkId(contract))){
@@ -87,4 +90,8 @@ public class Validator {
             }
             return report;
         }
+
+    public Validator() {
+        Injector inj = new Injector(this);
+    }
 }

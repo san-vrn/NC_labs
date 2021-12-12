@@ -1,18 +1,15 @@
 package com.application.repository;
 
-import com.application.contracts.ContractOnInternet;
 import com.application.contracts.Contracts;
-import com.application.repository.Sorting.BoubleSorter;
-import com.application.repository.Sorting.SelectionSorter;
-import com.application.repository.Sorting.iSorter;
+import com.application.d_injector.Autoinjectable;
+import com.application.d_injector.Injector;
+import com.application.repository.sorting.iSorter;
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Predicate;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * This class is intended for storing Contracts
@@ -21,11 +18,16 @@ public class Repository {
 
     private Contracts[] contracts;
     private int size;
-    private iSorter sorter = new BoubleSorter();
+
+    //private iSorter sorter = new BoubleSorter();
+    @Autoinjectable
+    private iSorter sorter;
+
 
     public Repository() {
         this.contracts = new Contracts[10];
         this.size = 0;
+        Injector inj = new Injector(this);
     }
 
     /**
@@ -114,8 +116,8 @@ public class Repository {
      * This is a method for sorting the "Repository" collection by the conditions passed through the comparator
      * @param comparator this is a comparator for transmitting sorting conditions
      */
-    public void sort(Comparator<Contracts> comparator){
-        sorter.sort(contracts, comparator);
+    public void sort(Comparator<? extends Contracts> comparator){
+        sorter.sort(contracts, (Comparator<Contracts>) comparator);
     }
 
     /**

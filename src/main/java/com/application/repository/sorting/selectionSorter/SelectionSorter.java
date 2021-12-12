@@ -1,6 +1,8 @@
-package com.application.repository.Sorting;
+package com.application.repository.sorting.selectionSorter;
 
 import com.application.contracts.Contracts;
+import com.application.repository.sorting.iSorter;
+
 import java.util.Comparator;
 
 /**

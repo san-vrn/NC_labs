@@ -1,6 +1,5 @@
-package com.application.contracts.utils.validator.checkers;
+package com.application.contracts.utils.validator.checkers.personCheckers;
 
-import com.application.contracts.Contracts;
 import com.application.entity.person.Person;
 import com.application.entity.person.personCharacteristics.Gender;
 
@@ -14,15 +13,16 @@ public class PersonCheck {
         else return false;
     }
 
+    // if(person.getFirstName().matches("[а-яА-Яa-zA-Z]+")){
     public boolean checkLastName(Person person){
-        if(person.getLastName().matches("[а-яА-Яa-zA-Z]+")){
+        if(person.getLastName().matches("[a-zA-Z]+")){
             return true;
         }
         else return false;
     }
 
     public boolean checkFirstName(Person person){
-        if(person.getFirstName().matches("[а-яА-Яa-zA-Z]+")){
+        if(person.getFirstName().matches("[a-zA-Z]+")){
             return true;
         }
         else return false;

@@ -21,13 +21,9 @@ public class ContractOnTV extends Contracts {
 
     @Override
     public String toString() {
-        return "ContractOnTV{" +
-                "ID=" + getID() +
-                ", contractStartDate=" + getContractEndDate() +
-                ", contractEndDate=" + getContractEndDate() +
-                ", numberContract=" + getNumberContract() +
-                ", contractOwner=" + getContractOwner() +
-                ", TV_plans=" + TV_plans +
-                '}';
+        return  super.toString() +
+                "ContractOnTV{" +
+                "TV_plans=" + TV_plans +
+                "} ";
     }
 }

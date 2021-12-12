@@ -1,4 +1,4 @@
-package com.application.repository.Sorting;
+package com.application.repository.sorting;
 
 import com.application.contracts.Contracts;
 

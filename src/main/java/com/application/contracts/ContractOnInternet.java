@@ -1,7 +1,6 @@
 package com.application.contracts;
 
 import com.application.entity.person.Person;
-
 import java.time.LocalDate;
 
 /**
@@ -15,15 +14,19 @@ public class ContractOnInternet extends Contracts {
         this.internetConnectionSpeed = internetConnectionSpeed;
     }
 
+    public int getInternetConnectionSpeed() {
+        return internetConnectionSpeed;
+    }
+
+    public void setInternetConnectionSpeed(int internetConnectionSpeed) {
+        this.internetConnectionSpeed = internetConnectionSpeed;
+    }
+
     @Override
     public String toString() {
-        return "ContractOnInternet{" +
-                "ID=" + getID() +
-                ", contractStartDate=" + getContractEndDate() +
-                ", contractEndDate=" + getContractEndDate() +
-                ", numberContract=" + getNumberContract() +
-                ", contractOwner=" + getContractOwner() +
-                ", internetConnectionSpeed=" + internetConnectionSpeed +
-                '}';
+        return  super.toString() +
+                "ContractOnInternet{" +
+                "internetConnectionSpeed=" + internetConnectionSpeed +
+                "} ";
     }
 }

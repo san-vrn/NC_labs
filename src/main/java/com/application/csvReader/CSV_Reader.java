@@ -5,6 +5,7 @@ import com.application.contracts.ContractOnMobile;
 import com.application.contracts.ContractOnTV;
 import com.application.contracts.Contracts;
 import com.application.contracts.utils.validator.Validator;
+import com.application.d_injector.Autoinjectable;
 import com.application.entity.person.Person;
 import com.application.entity.person.personCharacteristics.Gender;
 import com.application.repository.Repository;
@@ -85,18 +86,19 @@ public class CSV_Reader {
             }
             contractOwner = new Person(id_contractowner, lastName, firstName, patronymic, dateOfBirth, gender, passportNumber);
             switch (Objects.requireNonNull(typeContract)) {
-                case ("ТВ"):
+                case ("TV"):
                     contract = new ContractOnTV(id, startDate, endDate, numberContract, contractOwner, (int) (Objects.requireNonNull(otherInformation))[0]);
                     break;
-                case ("Мобильный"):
+                case ("Mobile"):
                     contract = new ContractOnMobile(id, startDate, endDate, numberContract, contractOwner, Objects.requireNonNull(otherInformation)[0], (int) otherInformation[1], otherInformation[2]);
                     break;
-                case ("Интернет"):
+                case ("Internet"):
                     contract = new ContractOnInternet(id, startDate, endDate, numberContract, contractOwner, (int) Objects.requireNonNull(otherInformation)[0]);
                     break;
             }
-            validator.check(contract);
-            repo.add(contract);
+            if ((validator.check(contract).getStatus()).equals("ok")){
+                repo.add(contract);
+            }
             index = 0;
         }
 

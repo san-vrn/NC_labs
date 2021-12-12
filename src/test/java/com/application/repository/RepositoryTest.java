@@ -82,10 +82,10 @@ class RepositoryTest {
     @Test
     void sort() {
         Person testPerson = new Person(1, "Fedorov", "Fedor", "Fedorovich", LocalDate.parse("1995-10-10"), Gender.MALE, 2015106604);
-        ContractOnInternet contract = new ContractOnInternet(1, LocalDate.now(), LocalDate.parse("2025-10-10"), 1011, testPerson, 100);
-        ContractOnInternet contract1 = new ContractOnInternet(2, LocalDate.now(), LocalDate.parse("2025-10-10"), 1012, testPerson, 150);
-        ContractOnInternet contract2 = new ContractOnInternet(3, LocalDate.now(), LocalDate.parse("2025-10-10"), 1013, testPerson, 100);
-        ContractOnInternet contract3 = new ContractOnInternet(4, LocalDate.now(), LocalDate.parse("2025-10-10"), 1014, testPerson, 500);
+        ContractOnInternet contract = new ContractOnInternet(1, LocalDate.now(), LocalDate.parse("2025-10-11"), 1012, testPerson, 100);
+        ContractOnInternet contract1 = new ContractOnInternet(2, LocalDate.now(), LocalDate.parse("2025-10-13"), 1011, testPerson, 150);
+        ContractOnInternet contract2 = new ContractOnInternet(3, LocalDate.now(), LocalDate.parse("2025-10-09"), 1014, testPerson, 100);
+        ContractOnInternet contract3 = new ContractOnInternet(4, LocalDate.now(), LocalDate.parse("2025-10-12"), 1013, testPerson, 500);
 
         Repository repository1 = new Repository();
         repository1.add(contract3);
@@ -99,9 +99,10 @@ class RepositoryTest {
         trueRepository.add(contract2);
         trueRepository.add(contract3);
 
-        Comparator<Contracts> pcomp = Comparator.comparingInt(Contracts::getID);
+        //Comparator<? extends Contracts> pcomp = Comparator.comparing(Contracts::getContractEndDate);
+        Comparator<? extends Contracts> pcomp = Comparator.comparing(Contracts::getID);
         repository1.sort(pcomp);
-
+        repository1.displayAllContracts();
         assertEquals(trueRepository, repository1);
     }
 }
