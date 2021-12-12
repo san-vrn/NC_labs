@@ -1,0 +1,3 @@
+com\application\entity\PersonTest.class
+com\application\csvReader\CSV_ReaderTest.class
+com\application\repository\RepositoryTest.class

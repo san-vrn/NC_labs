@@ -1,0 +1,11 @@
+com\application\contracts\ContractOnMobile.class
+com\application\contracts\ContractOnInternet.class
+com\application\csvReader\CSV_Reader.class
+com\application\csvReader\CSV_Parser.class
+com\application\repository\sorting\iSorter.class
+com\application\Application.class
+com\application\entity\person\Person.class
+com\application\entity\person\personCharacteristics\Gender.class
+com\application\contracts\ContractOnTV.class
+com\application\repository\Repository.class
+com\application\contracts\Contracts.class
